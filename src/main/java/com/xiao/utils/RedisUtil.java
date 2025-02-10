@@ -26,7 +26,7 @@ public class RedisUtil {
     public Set<Object> getKeys() {
         return redisTemplate.keys("*");
     }
-    public long getExp(Object key) {
+    public Long getExp(String key) {
         return redisTemplate.getExpire(key);
     }
 }

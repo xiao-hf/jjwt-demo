@@ -1,6 +1,7 @@
 package com.xiao;
 
 import com.xiao.entity.User;
+import com.xiao.mapper.UserMapper;
 import com.xiao.utils.JjwtUtil;
 import com.xiao.utils.RedisUtil;
 import io.jsonwebtoken.Claims;
@@ -15,6 +16,14 @@ class JjwtDemoApplicationTests {
 
     @Resource
     RedisUtil redisUtil;
+
+    @Resource
+    UserMapper userMapper;
+
+    @Test
+    void test1() {
+        System.out.println(userMapper.selectById(1));
+    }
 
     @Test
     void testRedis() {
